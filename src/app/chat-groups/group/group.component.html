@@ -1,0 +1,31 @@
+<p>group works!</p>
+<h4>{{username}}</h4>
+<br> <br> <br> <br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <mdb-card style="height : 500px;overflow:scroll;">
+                <mdb-card-header class="text-center">Group Chat</mdb-card-header>
+                <mdb-card-body>
+                   <p style="color: grey;" *ngFor="let dm of displayMessages"> <span *ngIf="dm.username==username" style="color: blue;">{{dm.username}} :</span>
+                    <span *ngIf="dm.username!=username" style="color: grey;">{{dm.username}} :</span>
+                    <span style="color: black;">{{dm.message}}</span></p>
+                </mdb-card-body>
+                <!-- <mdb-card-footer class="text-muted text-center">copyright @vineeth532k</mdb-card-footer> -->
+              </mdb-card>
+              <div class="row">
+              <div class="col-10">
+              <div class="md-form">
+                <input mdbInput type="text" [(ngModel)]="newMessage" id="form1" class="form-control">
+                <label for="form1" class="">New Message</label>
+              </div>
+            </div>
+            <div class="col-2">
+                <br>
+                <button mdbBtn type="button" gradient="aqua" rounded="true" (click)="sendNewMessage()" mdbWavesEffect>Send</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+

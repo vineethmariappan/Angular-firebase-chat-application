@@ -1,0 +1,57 @@
+<!-- <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+  (click)="frame.show()" mdbWavesEffect>Launch Modal</button> -->
+
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6"><br><br><br><br><br> <br> <br>
+        <div mdbModal #frame="mdbModal" class="modal-content" id="frameModalTop" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true"> 
+        <div class="box" role="document">
+            <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+              
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                <mdb-icon fas icon="fa-user-o" class="prefix grey-text"></mdb-icon>
+                <input type="email" id="defaultForm-email" [(ngModel)]="username" [formControl]="loginFormModalEmail" class="form-control"
+                        mdbInput mdbValidate>
+                <label for="defaultForm-email">Your name</label>
+                <mdb-error
+                    *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
+                
+                </mdb-error>
+                <mdb-success
+                    *ngIf="loginFormModalEmail.valid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
+                </mdb-success>
+                </div>
+
+                <div class="md-form mb-4">
+                <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+                <input type="password" id="defaultForm-pass" [(ngModel)]="userpassword" [formControl]="loginFormModalPassword" class="form-control"
+                        mdbInput mdbValidate>
+                <label for="defaultForm-pass">Enter password</label>
+                <mdb-error
+                    *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+                    
+                </mdb-error>
+                <mdb-success
+                    *ngIf="loginFormModalPassword.valid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+                   
+                </mdb-success>
+                </div>
+
+                
+              
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button mdbBtn color="default" class="waves-light" (click)="navigate()" mdbWavesEffect>Login</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
